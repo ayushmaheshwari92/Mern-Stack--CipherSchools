@@ -1,0 +1,94 @@
+//test.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./test.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <h1>this is a test headline.</h1> -->
+    <div>
+        <!-- <p class="center-paragraph">
+            This is <u>Ayush</u> <br> Maheshwari lives in 
+            <span style="color: red;">India</span>
+        </p>
+        <div>
+            <p>This is 2nd paragraph</p> -->
+            <p>Para 1</p>
+            <p>Para 2</p>
+        </div>  
+        <p>Para 3</p>
+        <p>Para 4</p>
+        <div>
+            <a href="https://cipherschools.com">CipherSchools</a>
+            <a href="https://google.com" target="_blank">Google</a>
+        </div>
+        <hr>
+    </div>
+</body>
+</html>
+
+
+//test.css
+/* #myParagraph {
+    text-align: center;
+} */
+
+/* .center-paragraph {
+    text-align: center;
+}  */
+
+/* * {
+    font-family: Arial, Helvetica, sans-serif
+} */
+
+/* h1{
+    text-align: center;
+    color: brown;
+}
+
+.center-paragraph {
+    text-align: center;
+    color: brown;
+}
+
+p {
+    text-align: center;
+    color: brown;
+} */
+
+/* h1, .center-paragraph, 
+p{
+    text-align: center;
+    color: brown;
+} */
+
+/* div p {
+    background-color: yellow;
+}
+
+div > p {
+    background-color: cyan;
+} */
+
+/* div + p {
+    background-color: yellow;
+} */
+
+/* div ~ p {
+    background-color: yellow;
+} */
+
+/* div ~ p:hover {
+    background-color: yellow;
+} */
+
+div ~ p::first-letter {
+color: red;
+}
+
+a[target] {
+    background-color:cyan;
+}
