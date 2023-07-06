@@ -1,6 +1,8 @@
 // ToDoScreen.js
 
 import { useState } from "react";
+import Task from "../components/Task";
+
 
 const ToDoScreen = () => {
     const [taskList, setTaskList] = useState([]);
@@ -22,7 +24,7 @@ const ToDoScreen = () => {
                     Add Task
                 </button>
                 {taskList.map((task) => (
-                    <task />
+                    <Task />
                 ))}
             </div>
         </div>
