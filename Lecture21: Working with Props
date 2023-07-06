@@ -1,0 +1,123 @@
+// ToDoScreen.js
+
+import { useState } from "react";
+import Task from "../components/Task";
+
+const ToDoScreen = () => {
+    const [taskList, setTaskList] = useState([]);
+    return (
+        <div className="screen">
+            <h1 className="ui heading center">To Do List</h1>
+            <div>
+                <button
+                    onClick={(e) => {
+                        setTaskList([
+                            ...taskList,
+                        {
+                            title: "Go to gym",
+                            description: "Going to gym is good for muscle growth.",
+                            createdDate: new Date(),
+                        },
+                        ]); 
+                    }}
+                    className="ui secondary button"
+                >
+                    Add Task
+                </button>
+                <section>
+                <div class="ui cards">
+                    {taskList.map((task, index) => (
+                        <Task task={task} key={index} />
+                    ))}
+                </div>  
+                </section>
+            </div>
+        </div>
+    );
+};
+
+export default ToDoScreen;
+
+
+//index.css
+
+@import url(https://cdn.jsdelivr.net/npm/semantic-ui@2.5.0/dist/semantic.min.css);
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.center {
+  text-align: center;
+}
+
+.screen {
+  padding: 2vh 10%;
+}
+
+section {
+  padding: 3vh 0;
+}
+
+//Task.js
+
+import { formatDate } from "../screens/utils/DateUtil";
+
+const Task = ({task: { title, description, createdDate }}) => {
+
+
+    return (
+        <div className="card">
+            <div className="content">
+                <div className="header">
+                    {title}
+                </div>
+                <div class="meta">{formatDate(createdDate)}</div>
+                <div className="description">{description}</div>
+            </div>
+            <div className="extra content">
+                <div className="ui two buttons">
+                    <div className="ui basic green button">Edit</div>
+                    <div className="ui basic red button">Delete</div>
+                </div>
+            </div>
+        </div>
+
+    );
+};
+
+export default Task;
+
+//DateUtil.js
+
+const dateFormatter = new Intl.DateTimeFormat("en-IN", {
+    // dateStyle: "medium",
+    hour12: true,
+    hour: "numeric",
+    minute: "numeric",
+    year: "numeric",
+    month: "short",
+    day: "2-digit"
+});
+
+export const formatDate = (date) => dateFormatter.format(date);
+
+//App.js
+
+import ToDoScreen from "./screens/ToDoScreen";
+
+const App = () => {
+    return <ToDoScreen />;
+};
+
+export default App;
